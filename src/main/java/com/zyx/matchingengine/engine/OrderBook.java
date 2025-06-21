@@ -2,6 +2,8 @@ package com.zyx.matchingengine.engine;
 
 import com.zyx.matchingengine.model.Order;
 import com.zyx.matchingengine.model.Trade;
+import lombok.Getter;
+
 import java.util.*;
 
 public class OrderBook {
@@ -16,6 +18,7 @@ public class OrderBook {
                     Double.compare(o1.price, o2.price) : Long.compare(o1.timestamp, o2.timestamp)
     );
 
+    @Getter
     private final List<Trade> trades = new ArrayList<>();
 
     public void submit(Order order) {
